@@ -11,19 +11,6 @@ const api = axios.create({
     headers: {'X-Custom-Header': 'foobar'}
 })
 
-function generateRequestParams(params: Record<string, string>): string {
-    let formBody: string[] = [];
-  
-    for (const property in params) {
-      const encodedKey = encodeURIComponent(property);
-      const encodedValue = encodeURIComponent(params[property]);
-      formBody.push(encodedKey + "=" + encodedValue);
-    }
-  
-    formBody = formBody.join("&");
-  
-    return formBody;
-  }
 
 export const Hero = () =>{
 
